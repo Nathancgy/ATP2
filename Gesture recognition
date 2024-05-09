@@ -1,0 +1,16 @@
+import cv2
+import numpy as np
+from cvzone.HandTrackingModule import HandDetector
+ 
+# 初始化手部检测模块
+handDetector = HandDetector(maxHands=2, detectionCon=0.5, trackCon=0.5)
+ 
+# 假设我们有一个输入图像，名为img
+img = cv2.imread('path_to_your_image.jpg')
+ 
+# 使用手部检测模块检测手势
+handLms, handNo = handDetector.findPosition(img)
+ 
+# 打印出手势的关键点位置和包围框信息
+print(handLms)
+print(handNo)
